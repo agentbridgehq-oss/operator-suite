@@ -1,0 +1,12 @@
+{
+  "name": "operator-suite",
+  "private": true,
+  "version": "1.0.0",
+  "description": "The Operator Suite — 20 AI income-path guides",
+  "scripts": {
+    "start": "npx --yes serve -s public -l tcp://0.0.0.0:${PORT:-8080}"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

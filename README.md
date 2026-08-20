@@ -1,2 +1,22 @@
-# operator-suite
-The Operator Suite — 20 AI income-path guides. Click a stream to open the full guide.
+# The Operator Suite
+
+Twenty AI income-path guides. One page.
+
+Click the master cover, scroll the streams, click a path to open its guide.
+
+## Live it on Railway
+
+1. Go to [railway.app](https://railway.app)
+2. **New Project → Deploy from GitHub**
+3. Select `operator-suite`
+4. Railway assigns a public URL
+
+No extra env vars needed.
+
+## Local
+
+```bash
+npm start
+```
+
+Opens on port 8080.
