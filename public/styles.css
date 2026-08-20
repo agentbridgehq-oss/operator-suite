@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500&display=swap");
+
+:root {
+  --bg: #0c0a08;
+  --surface: #14110e;
+  --elevated: #1c1814;
+  --fg: #f3eadc;
+  --muted: #a89880;
+  --faint: #6e6254;
+  --gold: #c4a574;
+  --border: #3a3228;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg); color: var(--fg); font-family: Outfit, sans-serif; min-height: 100%; }
+h1, h2, h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; text-wrap: balance; }
+button, a[role="button"], .btn { cursor: pointer; }
+a { color: inherit; }
+
+header.top {
+  position: sticky; top: 0; z-index: 30;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 24px; border-bottom: 1px solid color-mix(in oklab, var(--border) 80%, transparent);
+  background: color-mix(in oklab, var(--bg) 85%, transparent); backdrop-filter: blur(12px);
+}
+.brand .kicker { font-family: "Cormorant Garamond", serif; font-size: 11px; letter-spacing: 0.42em; text-transform: uppercase; color: var(--gold); }
+.brand .tag { font-size: 11px; font-style: italic; color: var(--muted); }
+.btn {
+  display: inline-flex; align-items: center; height: 40px; padding: 0 14px;
+  border: 1px solid var(--gold); border-radius: 6px; background: var(--surface); color: var(--fg);
+  text-decoration: none; font-size: 14px;
+}
+.btn.ghost { border-color: var(--border); color: var(--muted); }
+.btn.ghost:hover { border-color: var(--gold); color: var(--fg); }
+
+.hero {
+  max-width: 640px; margin: 0 auto; padding: 56px 16px 32px; text-align: center;
+}
+.hero .kicker { font-family: "Cormorant Garamond", serif; font-size: 12px; letter-spacing: 0.48em; text-transform: uppercase; color: var(--gold); }
+.hero h1 { margin-top: 12px; font-size: 48px; }
+.hero p { margin: 12px auto 0; max-width: 480px; color: var(--muted); line-height: 1.55; }
+
+.master {
+  display: block; margin: 32px auto 0; width: min(100%, 420px);
+  aspect-ratio: 2 / 3; border-radius: 6px; border: 1px solid color-mix(in oklab, var(--gold) 50%, transparent);
+  background:
+    radial-gradient(ellipse at 50% 20%, color-mix(in oklab, var(--gold) 18%, transparent), transparent 55%),
+    linear-gradient(180deg, #1a1510, #0e0b09);
+  text-decoration: none; position: relative; overflow: hidden;
+}
+.master .spine { position: absolute; inset: 18% 14%; border: 1px solid color-mix(in oklab, var(--gold) 35%, transparent); }
+.master .label { position: absolute; inset: auto 16px 28px; text-align: center; }
+.master .label b { display: block; font-family: "Cormorant Garamond", serif; font-size: 28px; font-weight: 500; }
+.master .cta {
+  position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%);
+  width: min(90%, 280px); height: 44px; display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--gold); border-radius: 6px; background: color-mix(in oklab, var(--bg) 80%, transparent);
+  font-size: 14px;
+}
+
+.streams { max-width: 1200px; margin: 0 auto; padding: 8px 16px 80px; }
+.streams h2 { text-align: center; font-size: 36px; margin-top: 8px; }
+.streams .sub { text-align: center; color: var(--muted); margin: 12px auto 28px; max-width: 560px; }
+
+.grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+}
+@media (min-width: 700px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1000px) { .grid { grid-template-columns: repeat(5, 1fr); } }
+
+.card {
+  border: 1px solid var(--border); border-radius: 6px; background: var(--surface);
+  overflow: hidden; cursor: pointer; text-align: left; color: inherit;
+}
+.card:hover { border-color: var(--gold); }
+.cover {
+  aspect-ratio: 2 / 3;
+  background:
+    linear-gradient(180deg, color-mix(in oklab, var(--gold) 10%, transparent), transparent 40%),
+    linear-gradient(180deg, #1c1814, #0f0c0a);
+  display: flex; align-items: flex-end; padding: 16px;
+}
+.cover span { font-family: "Cormorant Garamond", serif; font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); }
+.meta { padding: 12px; }
+.meta .id { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); }
+.meta h3 { margin-top: 4px; font-size: 18px; line-height: 1.2; }
+.meta p { margin-top: 4px; font-size: 12px; color: var(--muted); line-height: 1.35; }
+
+.overlay {
+  position: fixed; inset: 0; z-index: 40; overflow: auto; background: var(--bg);
+}
+.overlay header.hero-cover {
+  min-height: 42vh; display: flex; align-items: flex-end;
+  background:
+    linear-gradient(180deg, transparent, var(--bg)),
+    linear-gradient(180deg, #2a2218, #0c0a08);
+  padding: 32px 16px;
+}
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 16px 96px; }
+.overlay h1 { font-size: 42px; margin-top: 8px; }
+.dek { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 20px; color: var(--muted); margin-top: 12px; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+.promise { border: 1px solid var(--border); background: var(--surface); border-radius: 6px; padding: 20px; }
+.promise h2 { font-size: 22px; margin: 8px 0; }
+.section { padding-top: 40px; }
+.section h2 { font-size: 28px; }
+.section p { margin-top: 16px; line-height: 1.65; color: color-mix(in oklab, var(--fg) 90%, transparent); }
+.section ol { margin-top: 16px; padding-left: 20px; color: var(--muted); }
+.section li { margin-top: 8px; line-height: 1.5; }
+.callout { margin-top: 16px; padding: 12px 16px; border: 1px solid color-mix(in oklab, var(--gold) 35%, transparent); background: var(--elevated); border-radius: 6px; }
+.nav { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.nav a { border: 1px solid var(--border); background: var(--surface); border-radius: 6px; padding: 16px; text-decoration: none; }
+.nav a:hover { border-color: var(--gold); }
+.nav .dir { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+.hidden { display: none; }
